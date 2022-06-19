@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://kit.fontawesome.com/240c369354.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            color: white;
+        }
+
+        body {
+            background-color: black;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        header,
+        footer {
+            background: linear-gradient(-45deg, rgb(247, 128, 191), rgb(255,20,147), rgb(247, 128, 191), rgb(255,20,147)) 0% 0% / 400% 400%;
+            animation: 20s ease 0s infinite normal none running Gradient;
+            animation: Gradient 20s ease infinite;
+            height: 70px;
+        }
+
+        footer {
+
+            margin-top: 20px;
+        }
+
+        footer .footer {
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+
+        }
+
+        footer .footer p {
+            margin: 0 10px;
+            color: rgb(63, 63, 63);
+            ;
+            font-size: 16px;
+        }
+
+        @keyframes Gradient {
+            0% {
+                background-position: 0% 50%;
+                background-position-x: 0%;
+                background-position-y: 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+                background-position-x: 100%;
+                background-position-y: 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+                background-position-x: 0%;
+                background-position-y: 50%;
+            }
+        }
+
+        header .mynavbar {
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
+
+        header .mynavbar .mynavlist {
+            display: flex;
+            list-style: none;
+        }
+
+        header .mynavbar .mynavlist .mynav-item {
+            margin: 0 40px;
+        }
+
+        header .mynavbar .mynavlist .mynav-item a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 17px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        header .mynavbar .mynavlist .mynav-item a:hover {
+            color: #3f3f3f;
+            opacity: 0.5;
+        }
+
+        header .mynavbar .mynavlist .mynav-item#item1 {
+            margin-left: 80px;
+        }
+
+        .mainlogo {
+            height: 40px;
+            width: 60px;
+            border-radius: 6px;
+            margin-left: 20px;
+            box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+            ;
+
+        }
+
+        .content {
+            height: 500px;
+            width: 100%;
+            /* width: 90%; */
+            /* margin: 0px 90px; */
+            overflow: hidden;
+            position: relative;
+        }
+
+        .content .images {
+            height: 100%;
+            width: 100%;
+        }
+
+        .images img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .btm-sliders {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            display: flex;
+            transform: translateX(-50%);
+        }
+
+        .btm-sliders span {
+            height: 15px;
+            width: 50px;
+            border: 2px solid white;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .content .slide {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 45px;
+            height: 45px;
+            transition: all 0.5s;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content .slide:hover {
+            background-color: white;
+        }
+
+        .content .right {
+            right: 0;
+        }
+
+        .slide span {
+            font-size: 35px;
+            color: white;
+            line-height: 41px;
+            transition: all 0.5s;
+        }
+
+        .slide:hover span {
+            color: black;
+        }
+
+        /* film-section  */
+
+        .film-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 10px 30px;
+        }
+
+        .film-section .film-section-header {
+            font-size: 1.5em;
+            padding: 25px 0px;
+            border-bottom: 1px solid white;
+        }
+
+        .film-section .film-section-cards {
+            display: flex;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .film-section .film-section-cards .film-section-card {
+            position: relative;
+            display: block;
+            flex-direction: column;
+            min-width: 200px;
+            max-width: 200px;
+            margin: 0px 10px;
+            flex: 10%;
+        }
+
+        .film-section .film-section-cards .film-section-card {
+            margin: 0px 50px 0 0;
+        }
+
+        .film-section .film-section-cards .film-section-card {
+            margin: 10px 10px 0 0;
+        }
+
+        .film-section .film-section-cards .film-section-card .film-section-card-desc {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, .5);
+            width: 100%;
+        }
+
+        .film-section .film-section-cards .film-section-card img {
+            width: 100%;
+        }
+
+
+        .menu-button {
+            text-align: center;
+            background-color: rgb(238, 96, 172);
+            color: black;
+            font-size: 16px;
+            font-weight: bolder;
+            width: 160px;
+            height: 38px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            border-radius: 4px;
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .menu-text .search {
+            margin-left: 360px;
+            margin-top: -54px;
+            position: absolute;
+            height: 40px;
+            margin-right: 55px;
+            /*border: rgb(24, 23, 21);
+            border-radius: 4px;
+            border-style: double;*/
+            width: 1059px;
+            background-color: rgb(238, 96, 172);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            color: black;
+        }
+
+        .text-search {
+            position: absolute;
+            margin-top: -42px;
+            padding: 0px 1784px;
+            width: 50%;
+        }
+
+        .text-search span {
+            color: black;
+        }
+
+        .movie-menu {
+            padding: 15px 42px;
+            width: 240px;
+        }
+
+        .dropdown-menu {
+            display: none;
+            color: black;
+            background-color: #f9f9f9;
+            position: absolute;
+            min-width: 158px;
+            z-index: 1;
+        }
+
+        .dropdown-image span {
+            position: absolute;
+            margin-left: 110px;
+            margin-top: -25px;
+            color: black;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding: 12px 16px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            border-radius: 2px;
+            font-weight: bolder;
+            font-size: 14px;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: rgb(238, 96, 172);
+            color: black;
+        }
+
+        .movie-menu:hover .dropdown-menu {
+            margin-top: 3px;
+            display: block;
+        }
+
+        .menu-text span {
+            position: absolute;
+            margin-top: -40px;
+            margin-left: 1780px;
+            color: black;
+        }
+
+        .movie-menu .menu-button span {
+            color: black;
+        }
+
+        footer {
+
+            margin-top: 20px;
+        }
+
+        footer .copyright {
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+            margin-top: 2%;
+        }
+
+        footer .copyright p {
+            margin: 0 10px;
+            color: rgb(63, 63, 63);
+            ;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navabar -->
+    <header>
+        <nav class="mynavbar">
+            <a href="index.html"><img src="img/mov.png" alt="Loading Image" class="mainlogo" /></a>
+            <ul class="mynavlist">
+                <li class="mynav-item" id="item1">
+                    <a href="" class="mynav-links">Movies</a>
+                </li>
+                <li class="mynav-item" id="item2">
+                    <a href="" class="mynav-links">TV Series</a>
+                </li>
+                <li class="mynav-item" id="item3">
+                    <a href="" class="mynav-links">Audio</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- End Navbar -->
+
+    <!-- Image Slider -->
+    <div class="content">
+        <div class="images">
+            <img src="img/five.jpg" alt="Loading images" />
+            <img src="img/little women.jpg" alt="Loading images" />
+            <img src="img/up.jpg" alt="Loading images" />
+            <img src="img/broken.jpg" alt="Loading images" />
+            <img src="img/bindu.jpg" alt="Loading images" />
+        </div>
+        <div onclick="side_slide(-1)" class="slide left">
+            <span class="fas fa-angle-left"></span>
+        </div>
+        <div onclick="side_slide(1)" class="slide right">
+            <span class="fas fa-angle-right"></span>
+        </div>
+
+        <div class="btm-sliders">
+            <span onclick="btm_slide(1)"></span>
+            <span onclick="btm_slide(2)"></span>
+            <span onclick="btm_slide(3)"></span>
+            <span onclick="btm_slide(4)"></span>
+            <span onclick="btm_slide(5)"></span>
+        </div>
+    </div>
+    <!-- End Image Slider -->
+
+    <!-- Genre button -->
+    <div class="movie-menu">
+        <button class="menu-button" id="dropbtn"><span id="genreText">Genre</span></button>
+        <div class="dropdown-menu">
+            <a onclick="getMediaPosters(this.text)">All</a>
+            <a onclick="getMediaPosters(this.text)">Action</a>
+            <a onclick="getMediaPosters(this.text)">Drama</a>
+            <a onclick="getMediaPosters(this.text)">Sci-Fi</a>
+
+        </div>
+        <div onclick="side_slide(-1)" class="dropdown-image">
+            <span class="fa fa-caret-down"></span>
+        </div>
+    </div>
+
+    <!-- Search button -->
+    <div class="menu-text">
+        <input type="text" class="search" id="mysearch" placeholder="Search your favourite movie title"
+            oninput="updateResults()">
+        <span class="fa fa-search"></span>
+    </div>
+
+    <!-- Popular in Action Section -->
+    <div class="film-section">
+        <div class="film-section-cards" id="movies-action">
+            <div class="film-section-card">
+                <img src="img/pushapa.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Pushapa
+                    </h4>
+                    <p> Action, Hindi, 2022</p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/panther.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Black Panther
+                    </h4>
+                    <p>Action, English, 2018</p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/avengersendgame2.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Avengers end game2
+                    </h4>
+                    <p>Action, Thriller, Hindi, 2014 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/uri.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Uri
+                    </h4>
+                    <p> Action, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/WarD.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        War
+                    </h4>
+                    <p> Action, Hindi, 2019 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/baaghi3.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Baaghi3
+                    </h4>
+                    <p>Action/Thriller, Hindi, 2020 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/kuda.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Kuda Haafiz
+                    </h4>
+                    <p>Action/Thriller, Hindi, 2020 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/shershaan.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Shershaan
+                    </h4>
+                    <p>Action/war, Hindi, 2021 </p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <!-- Popular in Drama Section -->
+        <div class="film-section-cards" id="movies-drama">
+            <div class="film-section-card">
+                <img src="img/little women.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Little Women
+                    </h4>
+                    <p>Romance/Drama, English, 2019 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/titanic.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Titanic
+                    </h4>
+                    <p> Romance/Drama, English, 1997 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/PerksofbeingaWallflower.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Perks of being a Wallflower
+                    </h4>
+                    <p>Romance/Drama, 2012</p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/broken.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Broken but Beutiful
+                    </h4>
+                    <p>Series/Romantic, Hindi, 2018</p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/bindu.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Meri Pyaari Bindu
+                    </h4>
+                    <p>Music/Romance, Hindi, 2017 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/up.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Up
+                    </h4>
+                    <p>Romance/Family, English, 2009 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/fault hd.webp" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        The Fault in our stars
+                    </h4>
+                    <p> Drama/Romance, English, 2014 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/dil.jpg" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Dil Bichara
+                    </h4>
+                    <p> Drama/Romance, Hindi, 2020 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/friends.jpg" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Friends
+                    </h4>
+                    <p> Sitcom/Comedy, English, 1994 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/crazy.jpg" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Little Crazy thing called love
+                    </h4>
+                    <p> Drama/Romance, English, 2010</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="img/mitwa.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Mitwa
+                    </h4>
+                    <p> Drama/Emotional, Marathi, 2015</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="img/Secret_World_of_Arriety_.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Secret World of Arriety
+                    </h4>
+                    <p>Drama, English, 2010</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="img/five.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Five Feet apart
+                    </h4>
+                    <p>Drama/Love, English, 2019</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="img/emily.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Emily in Paris
+                    </h4>
+                    <p>Dram, English, 2020</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="img/kuda.webp" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Kuda Haafiz
+                    </h4>
+                    <p>Drama/Thriller, Hindi, 2020</p>
+                </div>
+            </div>
+            <div class="film-section-card" id="movies-drama">
+                <img src="img/little.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Little Thing
+                    </h4>
+                    <p>Series, English, 2014</p>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <!-- Popular in Sci-Fi Section -->
+        <div class="film-section-cards" id="movies-scifi">
+            <div class="film-section-card">
+                <img src="img/theory.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Theory of Everything
+                    </h4>
+                    <p>Romance/sci-fi, 2014</p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/star.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Star War
+                    </h4>
+                    <p> Sci-fi, 1997 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/space.jpeg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        The Space between us
+                    </h4>
+                    <p> Sci-fi/Romance, 2017 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/krrish3.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Krrish3
+                    </h4>
+                    <p> Action/sci-fi, 2013 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/ra one.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Ra-One
+                    </h4>
+                    <p> Action/Sci-fi, 2013 </p>
+                </div>
+            </div>
+            <div class="film-section-card">
+                <img src="img/oxygen.jpg" alt="" />
+                <div class="film-section-card-desc">
+                    <h4 class="film-name">
+                        Oxygen
+                    </h4>
+                    <p> Sci-fi, 2021 </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+
+
+    <!-- footer -->
+    <footer>
+        <div class="copyright">
+            <img src="img/mov.png" alt="Loading Image" class="mainlogo" />
+            <p>Powered by 365 Entertainment Portal 2019. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+</body>
+
+<script>
+    var indexValue = 1;
+    showImg(indexValue);
+
+    function btm_slide(e) {
+        showImg((indexValue = e));
+    }
+
+    function side_slide(e) {
+        showImg((indexValue += e));
+    }
+
+    function showImg(e) {
+        var i;
+        const img = document.querySelectorAll(".images img");
+        const sliders = document.querySelectorAll(".btm-sliders span");
+        if (e > img.length) {
+            indexValue = 1;
+        }
+        if (e < 1) {
+            indexValue = img.length;
+        }
+        for (i = 0; i < img.length; i++) {
+            img[i].style.display = "none";
+        }
+        for (i = 0; i < sliders.length; i++) {
+            sliders[i].style.background = "none";
+        }
+        img[indexValue - 1].style.display = "block";
+        sliders[indexValue - 1].style.background = "white";
+    }
+
+
+    var currentGenre = "Genre";
+    var movieTitle;
+
+    function getMediaPosters(selectedGenre) {
+        var countMovies = 0;
+        var mediaCarouselMovies;
+        currentGenre = selectedGenre;
+        document.getElementById("genreText").innerHTML = selectedGenre;
+
+        if (selectedGenre == 'All') {
+            document.getElementById('movies-action').style.display = "flex";
+            document.getElementById('movies-drama').style.display = "flex";
+            document.getElementById('movies-scifi').style.display = "flex";
+            mediaCarouselMovies = document.getElementById("film-section");
+        }
+        console.log(selectedGenre);
+        if (selectedGenre == 'Action') {
+            document.getElementById('movies-action').style.display = "flex";
+            document.getElementById('movies-drama').style.display = "none";
+            document.getElementById('movies-scifi').style.display = "none";
+            mediaCarouselMovies = document.getElementsByClassName("film-section-card");
+        }
+        if (selectedGenre == 'Drama') {
+            document.getElementById('movies-action').style.display = "none";
+            document.getElementById('movies-drama').style.display = "flex";
+            document.getElementById('movies-scifi').style.display = "none";
+            mediaCarouselMovies = document.getElementsByClassName("film-section-card");
+        }
+        if (selectedGenre == 'Sci-Fi') {
+            document.getElementById('movies-action').style.display = "none";
+            document.getElementById('movies-drama').style.display = "none";
+            document.getElementById('movies-scifi').style.display = "flex";
+            mediaCarouselMovies = document.getElementsByClassName("film-section-card");
+        }
+
+        var mediaCarouselMoviesCount = mediaCarouselMovies.length;
+
+        for (var count = 0; count < mediaCarouselMoviesCount; count++) {
+            if (mediaCarouselMovies[count].style.display == "block")
+                countMovies++;
+        }
+        console.log(countMovies);
+
+        //   showNoResultsText(countMovies);
+    }
+
+    function updateResults() {
+        var query = document.getElementById('mysearch').value.trim().toLowerCase();
+        var counter = 0;
+
+        if (currentGenre == 'All' || currentGenre == 'Genre') {
+            movieTitle = document.getElementsByClassName('film-name');
+        }
+        if (currentGenre == 'Action') {
+            movieTitle = document.getElementById('movies-action').getElementsByClassName('film-name');
+        }
+        if (currentGenre == 'Drama') {
+            movieTitle = document.getElementById('movies-drama').getElementsByClassName('film-name');
+        }
+        if (currentGenre == 'Sci-Fi') {
+            movieTitle = document.getElementById('movies-scifi').getElementsByClassName('film-name');
+        }
+        for (var name = 0; name < movieTitle.length; name++) {
+            var compareMovieTitles = movieTitle[name].innerHTML.toLowerCase();
+
+            if (compareMovieTitles.indexOf(query) === -1) {
+                movieTitle[name].closest('div.film-section-card').style.display = "none";
+            } else {
+                movieTitle[name].closest('div.film-section-card').style.display = "block";
+                counter++;
+            }
+        }
+
+        // showNoResultsText(counter);
+    }
+</script>
+
+</html>
